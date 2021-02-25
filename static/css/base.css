@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    background: url('/media/vinyard2-crop.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -48,8 +48,8 @@ body {
     color: white;
 }
 
-.text-black {
-    color: #000 !important;
+.text-indigo {
+    color: #4B0082 !important;
 }
 
 .border-black {
