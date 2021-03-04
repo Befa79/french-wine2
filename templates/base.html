@@ -39,7 +39,7 @@
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-indigo my-0"><strong>French</strong> Wine</h2>
+                    <h2 class="logo-font text-indigo my-0"><strong>French Wine</strong></h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -84,7 +84,7 @@
                                 <div><i class="fas fa-shopping-bag fa-lg text-indigo"></i></div>
                                 <p class="my-0 text-indigo">
                                     {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
+                                        {{ grand_total|floatformat:2 }}€
                                     {% else %}
                                         0.00€
                                     {% endif %}
@@ -106,13 +106,27 @@
         </div>
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
-                <!-- <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>                 -->
+                <!-- <h4 class="logo-font my-1">Free delivery on orders over {{ free_delivery_threshold }}€!</h4>                 -->
             </div>            
         </div>
     </header>
 
     {% if messages %}
-        <div class="message-container"></div>
+        <div class="message-container">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
     {% endif %}
 
     {% block page_header %}
@@ -122,6 +136,9 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
     {% endblock %}
 
     
