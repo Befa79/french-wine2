@@ -143,6 +143,9 @@ To retain customer, create a customer status base on his orders.
 - python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
 - python3 manage.py loaddata db.json 
 
+* Issue with postgres migration: An issue with Checkout is created due to the fact that older orders didn't have a profile attached to them. Unfortunaltely this create a bug and i can't enter in the admin/orders
+
+
 ## Deployment
 The project is stored on **Github** and hosted on **Heroku**
 #### Local Deployment
