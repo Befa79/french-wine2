@@ -6,20 +6,24 @@
             </a>
         </li>
 
+        <!-- Getting all products -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}">
                 All Wines
             </a>
         </li>
+
+        <!-- Vineyard based on categories -->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Categories
+                Vineyards
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                {% for category in categories %}
-                <a href="{% url 'products' %}?sort=category&direction=asc"
-                class="dropdown-item">{{ category }}</a>
-                {% endfor %}
+                <a href="/products/?category=Alsace"  class="dropdown-item">Alsace</a>
+                <a href="/products/?category=Bordeaux"  class="dropdown-item">Bordeaux</a>
+                <a href="/products/?category=Rhone"  class="dropdown-item">Rhone</a>
+                <a href="/products/?category=Bourgogne"  class="dropdown-item">Bourgogne</a>
+                <a href="/products/?category=Loire"  class="dropdown-item">Loire</a>
             </div>
         </li>
 

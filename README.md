@@ -35,18 +35,31 @@ This website has many purpose:
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
-### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+### Top menu
+* NavBar-mobile: The Navbar is  at the top and show the essential menus with hamburger style: Home/all wines/vineyard/bags/account/search
+* NavBar-desktop: The desktop has the same features with logo French Wine
+#### My account
+* You can register/login/logout and access to your profile (your details with order history)
+* As superuser you can have access to product management and add/edit/delete products
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+#### All wines
+gives you access to all the products in the database, the features are Product_Name, Price, rate, category, image
+#### Search
+where you can search products with key words
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+#### Product detail page
+When selecting a product, you will will have all the features, with a description, and you can also add the product in your shopping bag by adjusting the quantity and "add to bag"
 
-### Features Left to Implement
-- Another feature idea
+#### Shopping Bag
+The shopping bag provide an overview of all the users purchases, he can then add more quantity, or even remove the items. To confirm the order, he should click on Checkout.
+
+#### Checkout 
+The checkout page ask the users to add theirs personal, delivery, credit card details.
+By puching **complete order** button, he will trigger the payment process with Stripe
+
+### Future Features
+It would be interesting to create some periodic promotion, 5 + 1 bottle of wine for free
+To retain customer, create a customer status base on his orders.
 
 ## Technologies Used
 
@@ -248,5 +261,6 @@ In Heroku **Dashboards** select
 This is the content of the webshop products (images, description)
 
 Then i received great help from the tutors, Stackoverflow
+
 Thanks to my mentor Brian for the good inspiration
 
