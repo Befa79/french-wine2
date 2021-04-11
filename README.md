@@ -1,4 +1,4 @@
-# Your Project's Name
+# MyWineShop
 
 The project is a web-shop selling excellent french wine. 
 Wine is produced and sold worldwide, but it is still not easy to know good quality wine. 
